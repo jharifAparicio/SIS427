@@ -1,0 +1,17 @@
+---
+import { cuentas } from "../scripts/auth.js"
+
+// Obtener el nombre de administrador
+const admin = cuentas.find((cuenta) => cuenta.role === "admin")
+---
+
+<html>
+    <head>
+        <title>Bienvenido Administrador</title>
+    </head>
+    <body>
+        <h1>Bienvenido, {admin?.username}!</h1>
+        <p>Esta es la página de administrador.</p>
+        <a href="/">Cerrar sesión</a>
+    </body>
+</html>

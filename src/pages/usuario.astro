@@ -1,0 +1,17 @@
+---
+import { cuentas } from "../scripts/auth.js"
+
+// Obtener el nombre de usuario
+const usuario = cuentas.find((cuenta) => cuenta.role === "user")
+---
+
+<html>
+    <head>
+        <title>Bienvenido Usuario</title>
+    </head>
+    <body>
+        <h1>Bienvenido, {usuario?.username}!</h1>
+        <p>Esta es la página de usuario.</p>
+        <a href="/">Cerrar sesión</a>
+    </body>
+</html>
