@@ -1,5 +1,6 @@
 ---
 import { cuentas } from "../scripts/auth.js"
+import "../styles/global.css"
 
 // Obtener el nombre de administrador
 const admin = cuentas.find((cuenta) => cuenta.role === "admin")
@@ -9,9 +10,18 @@ const admin = cuentas.find((cuenta) => cuenta.role === "admin")
     <head>
         <title>Bienvenido Administrador</title>
     </head>
-    <body>
-        <h1>Bienvenido, {admin?.username}!</h1>
-        <p>Esta es la página de administrador.</p>
-        <a href="/">Cerrar sesión</a>
+    <body class="flex items-center justify-center h-screen bg-gray-100">
+        <div class="bg-white p-8 rounded-lg shadow-md w-96 text-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">
+                Bienvenido, {admin?.username}!
+            </h1>
+            <p class="text-gray-600">Esta es la pagina de administrador.</p>
+            <a
+                href="/"
+                class="inline-block mt-6 px-4 py-2 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition"
+            >
+                Cerrar sesion
+            </a>
+        </div>
     </body>
 </html>
